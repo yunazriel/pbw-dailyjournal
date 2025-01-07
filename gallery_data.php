@@ -28,9 +28,31 @@
                 </td>
                 <td>
                     <?php if ($row["gambar"] && file_exists('img/gallery/' . $row["gambar"])) { ?>
-                        <img class="img_article" src="img/gallery/<?= htmlspecialchars($row["gambar"]) ?>" width="100">
+                        <a data-bs-toggle="modal" data-bs-target="#imageModal<?= $row['gambar'] ?>">
+                            <img 
+                                class="img_article" 
+                                src="img/gallery/<?= htmlspecialchars($row["gambar"]) ?>" 
+                                width="100"
+                                style="cursor: zoom-in;"
+                        </a>
                     <?php } else { ?>
                         <span class="text-muted">gambar tidak tersedia</span>
+                    <?php } ?>
+                    <!--Image Modal -->
+                    <?php if ($row["gambar"] && file_exists('img/gallery/' . $row["gambar"])) { ?>
+                        <div class="modal fade" id="imageModal<?= $row['gambar'] ?>" tabindex="-1" aria-labelledby="imageModalLabel<?= $row['gambar'] ?>" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title custom-text" id="imageModalLabel<?= $row['gambar'] ?>"><?= $row["judul"] ?></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        <img src="img/gallery/<?= htmlspecialchars($row["gambar"]) ?>" alt="Gambar" class="img-fluid rounded">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     <?php } ?>
                 </td>
                 <td>
@@ -105,6 +127,7 @@
                         </div>
                     </div>
                     <!-- Akhir Modal Edit -->
+
                     <!-- Awal Modal Hapus -->
                     <div class="modal fade" id="modalHapus<?= $row["id"] ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">

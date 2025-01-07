@@ -8,7 +8,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daily Jurnals Bootstrap</title>
-    <link rel="icon" type="image/png" href="https://mobirise.com/how-to/bootstrap-vs-amp/assets/images/bootstrap-600x600.jpg">
+    <link rel="icon" type="image/png" href="https://th.bing.com/th/id/OIP.f48FRGm0mBmqCKrEz8dmxAHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1,4">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"rel="stylesheet"/>

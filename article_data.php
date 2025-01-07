@@ -32,11 +32,40 @@
                 <td class="text-start">
                     <?= nl2br(htmlspecialchars($row["isi"])) ?>
                 </td>
-                <td>
+                <!-- <td>
                     <?php if ($row["gambar"] && file_exists('img/article/' . $row["gambar"])) { ?>
                         <img class="img_article" src="img/article/<?= htmlspecialchars($row["gambar"]) ?>" width="100">
                     <?php } else { ?>
                         <span class="text-muted">gambar tidak tersedia</span>
+                    <?php } ?>
+                </td> -->
+                <td>
+                    <?php if ($row["gambar"] && file_exists('img/article/' . $row["gambar"])) { ?>
+                        <a data-bs-toggle="modal" data-bs-target="#imageModal<?= $row['gambar'] ?>">
+                            <img 
+                                class="img_article" 
+                                src="img/article/<?= htmlspecialchars($row["gambar"]) ?>" 
+                                width="100"
+                                style="cursor: zoom-in;"
+                        </a>
+                    <?php } else { ?>
+                        <span class="text-muted">gambar tidak tersedia</span>
+                    <?php } ?>
+                    <!--Image Modal -->
+                    <?php if ($row["gambar"] && file_exists('img/article/' . $row["gambar"])) { ?>
+                        <div class="modal fade" id="imageModal<?= $row['gambar'] ?>" tabindex="-1" aria-labelledby="imageModalLabel<?= $row['gambar'] ?>" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header custom-modal-header">
+                                        <h5 class="modal-title custom-text" id="imageModalLabel<?= $row['gambar'] ?>"><?= $row["judul"] ?></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        <img src="img/article/<?= htmlspecialchars($row["gambar"]) ?>" alt="Gambar" class="img-fluid rounded">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     <?php } ?>
                 </td>
                 <td>
