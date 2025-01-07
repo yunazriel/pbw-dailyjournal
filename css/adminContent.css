@@ -16,7 +16,6 @@ tr {
 .table-responsive {
   padding: 0;
   border-radius: 10px;
-  /* background-color: tomato; */
 }
 
 .table {
@@ -33,7 +32,6 @@ tr {
 .table td {
   vertical-align: middle;
   text-align: center;
-  /* border: none; */
 }
 
 .table th {
@@ -104,7 +102,6 @@ tr {
 
 .custom-text {
   font-family: "Caveat", serif;
-  /* font-weight: 600; */
   font-size: 40px;
   text-transform: capitalize;
 }
