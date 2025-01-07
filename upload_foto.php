@@ -13,7 +13,7 @@ function upload_foto_article($File){
 	$Allowed = array('jpg', 'png', 'gif', 'jpeg');  
 
 	if ($FileSize > 5000000) {
-		$message .= "Sorry, your file is too large, max 500KB. ";
+		$message .= "Sorry, your file is too large, max 5mb. ";
 		$uploadOk = 0;
 	}
 
@@ -56,7 +56,7 @@ function upload_foto_gallery($File){
 	$Allowed = array('jpg', 'png', 'gif', 'jpeg');  
 
 	if ($FileSize > 5000000) {
-		$message .= "Sorry, your file is too large, max 500KB. ";
+		$message .= "Sorry, your file is too large, max 5mb. ";
 		$uploadOk = 0;
 	}
 
