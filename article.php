@@ -3,6 +3,9 @@
 <div class="container-fluid mb-3">
     <div class="row">
         <div class="d-flex p-0">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" id="getArticle" type="text" placeholder="Search" aria-label="Search">
+            </form>
             <button type="button" class="ms-auto btn btn-success mb-2 fw-bold py-2" data-bs-toggle="modal" data-bs-target="#modalTambah">
                 <i class="bi bi-journal-plus me-1 fs-5"></i> Tambah Article
             </button>
@@ -212,10 +215,28 @@
                 }
             })
         }
+
+        function search(getArticle) {
+            $.ajax({
+                url : "article_data.php",
+                method : "POST",
+                data : {
+                    name: getArticle 
+                },
+                success : function(response){
+                    $('#article_data').html(response)
+                }
+            })
+        }
         
         $(document).on('click', '.halaman', function(){
             var hlm = $(this).attr("id")
             load_data(hlm)
+        })
+
+        $('#getArticle').on('keyup', function(){
+            let getArticle = $(this).val()
+            search(getArticle)
         })
     })
 </script>

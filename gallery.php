@@ -3,6 +3,9 @@
 <div class="container-fluid mb-3">
     <div class="row">
         <div class="d-flex p-0">
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" id="getGallery" type="text" placeholder="Search" aria-label="Search">
+        </form>
             <button type="button" class="ms-auto btn btn-success mb-2 fw-bold py-2" data-bs-toggle="modal" data-bs-target="#modalTambah">
                 <i class="bi bi-images me-1 fs-5"></i> Tambah Gallery
             </button>
@@ -200,10 +203,28 @@
                 }
             })
         }
+
+        function search(getGallery) {
+            $.ajax({
+                url : "gallery_data.php",
+                method : "POST",
+                data : {
+                    name: getGallery 
+                },
+                success : function(response){
+                    $('#gallery_data').html(response)
+                }
+            })
+        }
         
         $(document).on('click', '.halaman', function(){
             var hlm = $(this).attr("id")
             load_data(hlm)
+        })
+
+        $('#getGallery').on('keyup', function(){
+            let getGallery = $(this).val()
+            search(getGallery)
         })
     })
 </script>
